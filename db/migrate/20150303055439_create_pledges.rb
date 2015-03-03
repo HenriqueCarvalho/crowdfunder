@@ -3,7 +3,7 @@ class CreatePledges < ActiveRecord::Migration
     create_table :pledges do |t|
       t.references :funding_level, index: true
       t.string :name
-      t.email :email
+      t.string :email
       t.integer :amount
 
       t.timestamps null: false
