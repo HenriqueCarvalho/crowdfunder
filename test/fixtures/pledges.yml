@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  funding_level_id: 
+  name: MyString
+  email: 
+  amount: 1
+
+two:
+  funding_level_id: 
+  name: MyString
+  email: 
+  amount: 1
