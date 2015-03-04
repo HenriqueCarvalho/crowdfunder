@@ -1,12 +1,17 @@
 class FundingLevel < ActiveRecord::Base
   belongs_to :project
+  has_many :pledges, dependent: :nullify
+
+  #validates [:project,:reward_name,:amount, presence:true]
+
   validates :project, presence: true
-  validates :reward_name, length: { 
+  validates :reward_name, presence: true, length: { 
   	minimum: 2, 
 	too_short: "must have at least %{count} words" 
-  }, presence: true
-  validates :amount, numericality: { 
+  }
+  validates :amount, presence: true, numericality: { 
   	only_integer: true, 
-  	greater_than: 0 
-  }, presence: true
+  	greater_than_or_equal_to: 0 
+  }
+
 end
